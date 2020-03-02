@@ -13,10 +13,25 @@ import java.util.ArrayList;
  */
 public class Utilidades {
     public static ArrayList<String> getMeses() {
-       ArrayList <String> meses = new ArrayList <String>();
-       for (int i=1; i<=15; i++){
-        meses.add(String.valueOf(i*12));
+        ArrayList <String> meses = new ArrayList <String> ();
+        for (int i = 1; i <= 15; i++){
+            meses.add(String.valueOf(i*12));
         }
-       return meses;
+        return meses;
+    }
+    
+    public static ArrayList<Cuota> listCuotas (int numCuotas, double imptot) {
+        
+        ArrayList <Cuota> cuotas = new ArrayList <Cuota> ();
+        double inteCuota, capCuota;
+        double impCuota = imptot / numCuotas;
+        
+        for (int i = 1; i <= numCuotas; i++) {
+            inteCuota  = impCuota - impCuota*(i-1)/numCuotas;
+            capCuota = impCuota - inteCuota;
+            Cuota miCuota = new Cuota(i, impCuota, capCuota, inteCuota);
+            cuotas.add(miCuota);
+        }
+        return cuotas;
     }
 }
