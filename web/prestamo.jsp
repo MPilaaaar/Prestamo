@@ -31,7 +31,7 @@
             <input type="text" id="interes"  name="interes"/>
             <br>
             <br><label for="mes">Tiempo(meses): </label>
-            <select name="anyo" id="anyo">
+            <select name="tiempo" id="tiempo">
                 <% for(int i = 0; i < meses.size(); i++){ 
                     
                 %>
