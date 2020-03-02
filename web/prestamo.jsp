@@ -41,5 +41,7 @@
 
             <input type="submit" value="Consultar">
         </form>
+            
+            <h1>Importe Total Prestamo: </h1>
     </body>
 </html>
