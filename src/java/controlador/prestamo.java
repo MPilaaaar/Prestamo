@@ -78,29 +78,27 @@ public class prestamo extends HttpServlet {
         double cantParse, inteParse;
         int tiemParse = Integer.parseInt(tiempo);
         
-        if(cantidad != null){
+        if(!cantidad.equals("")){
             cantParse = Double.parseDouble(cantidad);
         } 
         else {
             cantParse = 0;
         }
         
-        if(interes != null) {
+        if(!interes.equals("")) {
             inteParse = Double.parseDouble(interes);
         } 
         else {
             inteParse = 0;
         }
         
-        if (nombre == null) {
-            nombre = "";
-        }
-        
         Prestamo prestamo = new Prestamo(cantParse, inteParse, tiemParse);
         ArrayList <String> meses = Utilidades.getMeses();
+        
         request.setAttribute("meses", meses);
         request.setAttribute("nombre", nombre);
-        request.setAttribute("prestamo", prestamo);
+        request.setAttribute("cantidad", nombre);
+        request.setAttribute("totpres", prestamo);
        
         request.getRequestDispatcher("prestamo.jsp").forward(request, response);
     }
